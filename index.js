@@ -3,7 +3,7 @@
 //criei uma variavel para armazenar o nome do nivel
 let nomeHeroi = "Shumingo"
 let xp = 7000
-let nivel
+let nivel = ""
 
 //como no desafio pulou do 5000 para o 7000 estendi um pouco a quantidade de experiencia do nivel ouro para platina diamante.
 
