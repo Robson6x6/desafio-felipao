@@ -1,26 +1,49 @@
 //segundo desafio do felipão
+
+//criei a função com variaveis
 function rankedWins(victory, defeat){
     let wins = victory - defeat
-    return wins  
+    let lvl = ""
+
+    if(victory <= 10){
+        lvl = "ferro"
+    }else if(victory >= 10 && victory <= 20){
+        lvl = "Bronze"
+    }else if(victory >= 21 && victory <=50){
+        lvl = "Prata"
+    }else if(victory >= 51 && victory <= 80){
+        lvl = "Ouro"
+    }else if(victory >= 81 && victory <= 90){
+        lvl = "Diamante"
+    }else if(victory >= 91 && victory <= 100){
+        lvl = "Lendario"
+    }else if(victory >= 101){
+        lvl = "Imortal"
+    }
+
+    return { wins, lvl }
 }
 
-let balance = rankedWins(32, 12)
-let level = balance
+console.log("---- Relatório de nível dos jogadores ---")
 
-if(balance < 10){
-    level = "ferro"
-}else if(balance >= 11 && balance <= 20){
-    level = "Bronze"
-}else if(balance >= 21 && balance <=50){
-    level = "Prata"
-}else if(balance >= 51 && balance <= 80){
-    level = "Ouro"
-}else if(balance >= 81 && balance <= 90){
-    level = "Diamante"
-}else if(balance >= 91 && balance <= 100){
-    level = "Lendario"
-}else if(balance >= 101){
-    level = "Imortal"
+
+const heros = [
+    {victory: 32, defeat: 12},
+    {victory: 4, defeat: 2},
+    {victory: 75, defeat: 22},
+    {victory: 95, defeat: 2},]
+
+
+//criado laço de repetição, tive que fazer algumas pesquisas para poder criar esse laço.
+// entender que ao usar player.length ele vai até o ultimo valor do array criado.
+
+for(let i = 0; i < heros.length; i++){
+    const hero = heros[i]
+    
+    let final = rankedWins(hero.victory, hero.defeat)
+    //saida
+console.log("O Héroi tem o saldo de " + final.wins + " vitórias está no nível de " + final.lvl)
 }
 
-console.log("O Héroi tem saldo de " + balance + " vitórias está no nível de " + level)
+
+
