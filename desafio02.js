@@ -36,6 +36,7 @@ const heros = [
 
 //criado laço de repetição, tive que fazer algumas pesquisas para poder criar esse laço.
 // entender que ao usar player.length ele vai até o ultimo valor do array criado.
+//e também como pegar o valor correto do wins e lvl no console.log usando a função final.variavel/objeto
 
 for(let i = 0; i < heros.length; i++){
     const hero = heros[i]
